@@ -62,13 +62,7 @@ This command creates a copy of `.env.example` and names it `.env`, allowing you 
     │
     ├── dataset.py              <- Scripts to download or generate data
     │
-    ├── features.py             <- Code to create features for modeling
-    │
-    │    
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
+    ├── features.py             <- Code to create features for modeling  
     │
     ├── plots.py                <- Code to create visualizations 
     │
