@@ -214,7 +214,7 @@ raw_folder = os.path.join(project_root, "data", "raw")
 os.makedirs(raw_folder, exist_ok=True)
 
 # Save data to CSV
-csv_filename = os.path.join(raw_folder, "property_listings_for_rentals.csv")
+csv_filename = os.path.join(raw_folder, "bhisho_rentals.csv")
 
 # Define CSV column headers
 csv_columns = ["url", "price", "location", "property_title",
