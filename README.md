@@ -1,22 +1,14 @@
-# Data Project Template
+# South African Property Market Analysis: Capital Cities
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
+## 📌 Overview
+This project analyzes real estate trends in South Africa's capital cities across all nine provinces. By examining rental and sale listings, we aim to uncover key market dynamics, affordability trends, and investment opportunities.
 
-## Cookiecutter Data Science
-This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
 
-## Adjusting .gitignore
+## 📊 Data Sources
 
-Ensure you adjust the `.gitignore` file according to your project needs. For example, since this is a template, the `/data/` folder is commented out and data will not be exlucded from source control:
 
-```plaintext
-# exclude data from source control by default
-# /data/
-```
 
-Typically, you want to exclude this folder if it contains either sensitive data that you do not want to add to version control or large files.
+## 🎯 Objectives
 
 ## Duplicating the .env File
 To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
