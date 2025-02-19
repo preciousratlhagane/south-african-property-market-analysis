@@ -140,34 +140,91 @@ for city, pages in city_max_pages.items():
         listing_urls.extend(page_listing_urls)
 
 
-# Create a function to extract the maximum number of pages
-max_pages_response = requests.get("")
-max_pages_soup = BeautifulSoup(max_pages_response.text, "html.parser")
-pagination = max_pages_soup.find("ul", class_="pagination")
-max_page_number = pagination.find_all("li")
-max_page = int(max_page_number[-1].get_text(strip=True))
-print(max_page)
+# Create a function to extract property features
+def get_property_features(listing_url):
+    headers = {"User-Agent": random.choice(USER_AGENTS)}
+    human_like_delay()  # Ensure this function is defined
+
+    try:
+        listing_response = requests.get(
+            listing_url, headers=headers, timeout=15)
+
+        if listing_response.status_code != 200:
+            print(
+                f"Error accessing {listing_url}, status: {listing_response.status_code}")
+            return None  # Return None for consistency
+
+        listing_soup = BeautifulSoup(listing_response.text, "html.parser")
+
+        # Get the price of a property listing
+        price = listing_soup.find("div", class_="p24_mBM")
+        price = price.get_text(strip=True) if price else "N/A"
+
+        # Get the location of a property listing
+        location_div = listing_soup.select_one("div.p24_mBM p")
+        location = location_div.get_text(strip=True) if location_div else "N/A"
+
+        # Get the title of the listing
+        title_div = listing_soup.find("div", class_="sc_listingAddress")
+        property_title = title_div.find("h1").get_text(
+            strip=True) if title_div else "N/A"
+
+        # Get the property description
+        description_div = listing_soup.find(
+            "div", class_="sc_listingDetailsText")
+        property_description = description_div.get_text(
+            strip=True) if description_div else "N/A"
+
+        # Get the property features
+        features_div = listing_soup.find("div", id="accordion")
+        property_features = features_div.get_text(
+            strip=True) if features_div else "N/A"
+
+        return {
+            "url": listing_url,
+            "price": price,
+            "location": location,
+            "property_title": property_title,
+            "property_description": property_description,
+            "property_features": property_features,
+        }
+
+    except requests.RequestException as e:
+        print(f"Request failed for {listing_url}: {e}")
+        return None
 
 
-response = requests.get("")
-soup = BeautifulSoup(response.text, "html.parser")
+# Create an empty list to store scraped property data
+property_data_list = []
 
-title_div = soup.find("div", class_="sc_listingAddress")
-title = title_div.find("h1")
-final_result = title.get_text(strip=True)
-print(final_result)
+for urls in listing_urls:
+    property_listing_url = f"{base_listing_url_for_rent}/{urls}"
+    property_info = get_property_features(property_listing_url)
 
-price = soup.find("div", class_="p24_mBM").text
-print(price)
+    if property_info:
+        property_data_list.append(property_info)
 
+# Get the absolute path to the root of the project (one level up from "notebooks")
+project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
 
-location = soup.select_one("div.p24_mBM p")
-final_location = location.get_text(
-    strip=True) if location else "Location not found."
-print(final_location)
+# Path to "data/raw"
+raw_folder = os.path.join(project_root, "data", "raw")
 
-description = soup.find("div", class_="sc_listingDetailsText").text
-print(description)
+# Ensure that the directory exists
+os.makedirs(raw_folder, exist_ok=True)
 
-property_features = soup.find("div", id="accordion").text
-print(property_features)
+# Save data to CSV
+csv_filename = os.path.join(raw_folder, "property_listings_for_rentals.csv")
+
+# Define CSV column headers
+csv_columns = ["url", "price", "location", "property_title",
+               "property_description", "property_features"]
+
+# Write to CSV file
+with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=csv_columns)
+
+    writer.writeheader()
+    writer.writerows(property_data_list)
+
+print(f"Data successfully saved to {csv_filename}")
