@@ -78,8 +78,8 @@ capital_cities = {
     # "Polokwane": "property-to-rent-in-polokwane-c703",
     # "Mbombela": "property-to-rent-in-mbombela-as170",
     # "Cape Town": "property-to-rent-in-cape-town-c432",
-    "Mafikeng": "property-to-rent-in-mafikeng-c133",
-    # "Kimberley": "property-to-rent-in-kimberley-c715"
+    # "Mafikeng": "property-to-rent-in-mafikeng-c133",
+    "Kimberley": "property-to-rent-in-kimberley-c715"
 }
 
 
@@ -214,7 +214,7 @@ raw_folder = os.path.join(project_root, "data", "raw")
 os.makedirs(raw_folder, exist_ok=True)
 
 # Save data to CSV
-csv_filename = os.path.join(raw_folder, "mafikeng_rentals.csv")
+csv_filename = os.path.join(raw_folder, "kimberley_rentals.csv")
 
 # Define CSV column headers
 csv_columns = ["url", "price", "location", "property_title",
