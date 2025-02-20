@@ -130,6 +130,7 @@ for city, pages in city_max_pages.items():
         print(f"Warning: No slug found for {city}, skipping...")
         continue  # Skip if no slug is found
 
+    """
     for page in range(1, pages + 1):
         print(f"Scraping page {page}/{pages} for {city}...")  # Show progress
 
@@ -138,6 +139,18 @@ for city, pages in city_max_pages.items():
 
         # More efficient than using a loop
         listing_urls.extend(page_listing_urls)
+    """
+
+    # Obtain listings from a single page
+    page = 1  # Specify the page you want to scrape
+
+    print(f"Scraping page {page} for {city}...")  # Show progress
+
+    property_url = f"{base_listing_url_for_rent}/{slug}?Page={page}"
+    page_listing_urls = get_property_listing_urls(property_url)
+
+    # More efficient than using a loop
+    listing_urls.extend(page_listing_urls)
 
 
 # Create a function to extract property features
@@ -214,7 +227,7 @@ raw_folder = os.path.join(project_root, "data", "raw")
 os.makedirs(raw_folder, exist_ok=True)
 
 # Save data to CSV
-csv_filename = os.path.join(raw_folder, "kimberley_rentals.csv")
+csv_filename = os.path.join(raw_folder, "kimberley_p1_rentals.csv")
 
 # Define CSV column headers
 csv_columns = ["url", "price", "location", "property_title",
