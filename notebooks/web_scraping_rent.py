@@ -1,3 +1,4 @@
+import itertools
 import csv
 import os
 import random
@@ -217,6 +218,65 @@ for urls in listing_urls:
     if property_info:
         property_data_list.append(property_info)
 
+
+a = get_property_features("")
+b = get_property_features("")
+c = get_property_features("")
+d = get_property_features("")
+e = get_property_features("")
+f = get_property_features("")
+g = get_property_features("")
+h = get_property_features("")
+i = get_property_features("")
+j = get_property_features("")
+k = get_property_features("")
+l = get_property_features("")
+m = get_property_features("")
+n = get_property_features("")
+o = get_property_features("")
+p = get_property_features("")
+q = get_property_features("")
+r = get_property_features("")
+s = get_property_features("")
+t = get_property_features("")
+
+# List of dictionaries (property listings)
+listings = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t]
+
+# Ensure the list is not empty
+if not listings:
+    print("Error: No listings found.")
+else:
+    # Get the absolute path to the root of the project (one level up from "notebooks")
+    project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
+
+    # Path to "data/raw"
+    raw_folder = os.path.join(project_root, "data", "raw")
+
+    # Ensure that the directory exists
+    os.makedirs(raw_folder, exist_ok=True)
+
+    # Save data to CSV
+    csv_filename = os.path.join(raw_folder, "kimberley_p2_rentals.csv")
+
+    # Extract field names from the first dictionary (assuming all have the same structure)
+    fieldnames = listings[0].keys()
+
+    # Write to CSV file
+    with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+
+        # Write header row
+        writer.writeheader()
+
+        # Write each dictionary as a row in the CSV
+        writer.writerows(listings)
+
+    print(
+        f"CSV file '{csv_filename}' has been created successfully at {csv_filename}!")
+
+
+"""
 # Get the absolute path to the root of the project (one level up from "notebooks")
 project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
 
@@ -241,3 +301,4 @@ with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
     writer.writerows(property_data_list)
 
 print(f"Data successfully saved to {csv_filename}")
+"""
