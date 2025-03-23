@@ -35,9 +35,9 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 ## 🔍 Analysis Approach
 **Data Collection**: Web scraping property listings using Python (i.e Beautiful Soup)
-**Data Cleaning**:
-**Exploratory Data Analysis**:
-**Dashboard Creation**: 
+**Data Cleaning**: Handling missing values, creating new columns
+**Exploratory Data Analysis**: Visualizing price distributions, market trends and city-wise comparisons
+**Dashboard Creation**: Create a comprehensive dashboard on PowerBI
 
 ## Duplicating the .env File
 To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
