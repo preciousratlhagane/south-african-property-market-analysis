@@ -23,7 +23,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 ## 🌆 Capital Cities Covered 
 | Province | Capital City |
 |----------|-------------|
-| Gauteng | Pretoria |
+| Gauteng | Johannesburg |
 | Western Cape | Cape Town |
 | KwaZulu-Natal | Pietermaritzburg |
 | Eastern Cape | Bhisho |
