@@ -1,23 +1,24 @@
 # South African Property Market Analysis: Capital Cities
 
+
 ## 📌 Overview
 This project analyzes real estate trends in South Africa's capital cities across all nine provinces. By examining rental and sale listings, we aim to uncover key market dynamics, affordability trends, and investment opportunities.
 
 
 ## 📊 Data Sources
 The dataset consists of web-scraped property listings, capturing details such as: 
-**Property Type** (Apartment, House, Townhouse, Farm etc.)
-**Location** (Suburb, Province, Capital City)
-**Price** (For Sale & Rent)
-**Size** (Square meters, Number of bedrooms and bathrooms)
-**Additional Features** (Garden, Garage, Pool, etc)
+- **Property Type** (Apartment, House, Townhouse, Farm etc.)
+- **Location** (Suburb, Province, Capital City)
+- **Price** (For Sale & Rent)
+- **Size** (Square meters, Number of bedrooms and bathrooms)
+- **Additional Features** (Garden, Garage, Pool, etc)
 
 
 ## 🎯 Objectives
-**Compare** rental and sale prices across capital cities
-**Identify** demand and supply trends in different cities
-**Analyze** affordability and investment potential
-**Evaluate** the impact of economic factors on property prices
+- **Compare** rental and sale prices across capital cities
+- **Identify** demand and supply trends in different cities
+- **Analyze** affordability and investment potential
+- **Evaluate** the impact of economic factors on property prices
 
 
 ## 🌆 Capital Cities Covered 
@@ -33,11 +34,13 @@ The dataset consists of web-scraped property listings, capturing details such as
 | North West | Mahikeng |
 | Northern Cape | Kimberley |
 
+
 ## 🔍 Analysis Approach
-**Data Collection**: Web scraping property listings using Python (i.e Beautiful Soup)
-**Data Cleaning**: Handling missing values, creating new columns
-**Exploratory Data Analysis**: Visualizing price distributions, market trends and city-wise comparisons
-**Dashboard Creation**: Create a comprehensive dashboard on PowerBI
+- **Data Collection**: Web scraping property listings using Python (i.e Beautiful Soup)
+- **Data Cleaning**: Handling missing values, creating new columns
+- **Exploratory Data Analysis**: Visualizing price distributions, market trends and city-wise comparisons
+- **Dashboard Creation**: Create a comprehensive dashboard on PowerBI
+
 
 ## Duplicating the .env File
 To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
