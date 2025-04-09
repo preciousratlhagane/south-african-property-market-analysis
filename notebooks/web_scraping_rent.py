@@ -1,4 +1,3 @@
-import itertools
 import csv
 import os
 import random
@@ -7,7 +6,6 @@ import time
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-
 
 # Load enviromental_variables:
 load_dotenv()
