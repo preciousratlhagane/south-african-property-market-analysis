@@ -70,14 +70,14 @@ city_max_pages = {}
 
 # Create a dictionary to store all the capital cities and their links:
 capital_cities = {
-    # "Johannesburg": "property-to-rent-in-johannesburg-c100",
-    # "Bloemfontein": "property-to-rent-in-bloemfontein-c18",
-    # "Bhisho": "property-to-rent-in-bhisho-c247",
-    # "Pietermaritzburg": "property-to-rent-in-pietermaritzburg-c147",
-    # "Polokwane": "property-to-rent-in-polokwane-c703",
-    # "Mbombela": "property-to-rent-in-mbombela-as170",
-    # "Cape Town": "property-to-rent-in-cape-town-c432",
-    # "Mafikeng": "property-to-rent-in-mafikeng-c133",
+    "Johannesburg": "property-to-rent-in-johannesburg-c100",
+    "Bloemfontein": "property-to-rent-in-bloemfontein-c18",
+    "Bhisho": "property-to-rent-in-bhisho-c247",
+    "Pietermaritzburg": "property-to-rent-in-pietermaritzburg-c147",
+    "Polokwane": "property-to-rent-in-polokwane-c703",
+    "Mbombela": "property-to-rent-in-mbombela-as170",
+    "Cape Town": "property-to-rent-in-cape-town-c432",
+    "Mafikeng": "property-to-rent-in-mafikeng-c133",
     "Kimberley": "property-to-rent-in-kimberley-c715"
 }
 
