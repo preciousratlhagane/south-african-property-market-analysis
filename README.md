@@ -2,7 +2,7 @@
 
 
 ## 📌 Overview
-This project analyzes real estate trends in South Africa's capital cities across all nine provinces. By examining rental and sale listings, we aim to uncover key market dynamics, affordability trends, and investment opportunities.
+Real estate investors aim to buy properties below market value and sell or rent them at competitive prices. The process of identifying such undervalued properties requires analyzing a large volume of listing data, considering factors like location, size, amenities, market trends and price anomalies. 
 
 
 ## 📊 Data Sources
@@ -35,29 +35,45 @@ The dataset consists of web-scraped property listings, capturing details such as
 | Northern Cape | Kimberley |
 
 
-## 🔍 Analysis Approach
-- **Data Collection**: Web scraping property listings using Python (i.e Beautiful Soup)
-- **Data Cleaning**: Handling missing values, creating new columns
-- **Exploratory Data Analysis**: Visualizing price distributions, market trends and city-wise comparisons
-- **Dashboard Creation**: Create a comprehensive dashboard on PowerBI
+## 🪈 Project Pipeline
+
+1. **Web Scraping** 
+    - Tools: 
+    - Data Collected: 
+
+2. **Data Cleaning and Preprocessing**
+    - Removing duplicatess, handling missing values
+    - Extracting structured information from free-text fields
+    - Standardizing price and area formats
+
+3. **Exploratory Data Analysis**
+    -
+    -
+    -
+
+4. **Data Export**
+    - Clean dataset saved as `.csv` for easy import into Power BI
+
+5. **PowerBI Dashboard**
+    - Interactive visuals including:
+        - Price trends by city and suburb
+        - 
+        - 
+
+## 📊 Key Features of the Dashboard
+
+## Technologies Used: 
 
 
-## Duplicating the .env File
-To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
-
-```bash
-cp .env.example .env # Linux, macOS, Git Bash, WSL
-copy .env.example .env # Windows Command Prompt
-```
-
-This command creates a copy of `.env.example` and names it `.env`, allowing you to configure your environment variables specific to your setup.
 
 
-## Project Organization
+## 📂 Project Organization
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
 ├── README.md          <- The top-level README for developers using this project
+├── dashboard
+│   ├── propertydashboard.pbix   <- PowerBI dashboard file
 ├── data
 │   ├── interim        <- Intermediate data that has been transformed
 │   ├── processed      <- The final, canonical data sets for modeling
