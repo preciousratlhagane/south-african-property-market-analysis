@@ -1,7 +1,6 @@
 import csv
 import os
 import random
-import sys
 import time
 
 import requests
@@ -9,12 +8,6 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 from src.config import USER_AGENTS
-
-# Add the project root directory to sys.path
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-if project_root not in sys.path:
-    sys.path.append(project_root)
-
 
 # Load enviromental_variables:
 load_dotenv()
@@ -83,46 +76,26 @@ def get_property_features(listing_url):
         return None
 
 
-a = get_property_features(
-    "https://www.sahometraders.co.za/11-bedroom-house-for-sale-in-sterpark-111027045")
-b = get_property_features(
-    "https://www.sahometraders.co.za/4-bedroom-townhouse-for-sale-in-polokwane-central-116011363")
-c = get_property_features(
-    "https://www.sahometraders.co.za/3-bedroom-house-for-sale-in-polokwane-central-115965772")
-d = get_property_features(
-    "https://www.sahometraders.co.za/2-bedroom-townhouse-for-sale-in-bendor-115928367")
-e = get_property_features(
-    "https://www.sahometraders.co.za/vacant-land-plot-for-sale-in-mankweng-115992333")
-f = get_property_features(
-    "https://www.sahometraders.co.za/vacant-land-plot-for-sale-in-lebowakgomo-zone-a-115999124")
-g = get_property_features(
-    "https://www.sahometraders.co.za/3-bedroom-townhouse-for-sale-in-waterberry-country-estate-115991779")
-h = get_property_features(
-    "https://www.sahometraders.co.za/commercial-property-for-sale-in-bendor-116037272")
-i = get_property_features(
-    "https://www.sahometraders.co.za/5-bedroom-house-for-sale-in-sterpark-116037084")
-j = get_property_features(
-    "https://www.sahometraders.co.za/6-bedroom-house-for-sale-in-moregloed-115961074")
-k = get_property_features(
-    "https://www.sahometraders.co.za/3-bedroom-house-for-sale-in-polokwane-central-115837121")
-l = get_property_features(
-    "https://www.sahometraders.co.za/2-bedroom-townhouse-for-sale-in-polokwane-central-116002482")
-m = get_property_features(
-    "https://www.sahometraders.co.za/vacant-land-plot-for-sale-in-magna-via-industrial-116016454")
-n = get_property_features(
-    "https://www.sahometraders.co.za/4-bedroom-house-for-sale-in-polokwane-central-115964140")
-o = get_property_features(
-    "https://www.sahometraders.co.za/3-bedroom-house-for-sale-in-seshego-h-115978948")
-p = get_property_features(
-    "https://www.sahometraders.co.za/farm-for-sale-in-polokwane-rural-116012688")
-q = get_property_features(
-    "https://www.sahometraders.co.za/5-bedroom-house-for-sale-in-the-aloes-lifestyle-estate-115966562")
-r = get_property_features(
-    "https://www.sahometraders.co.za/7-bedroom-house-for-sale-in-polokwane-central-116038051")
-s = get_property_features(
-    "https://www.sahometraders.co.za/vacant-land-plot-for-sale-in-southern-gateway-115953231")
-t = get_property_features(
-    "https://www.sahometraders.co.za/4-bedroom-house-for-sale-in-sterpark-116006358")
+a = get_property_features("")
+b = get_property_features("")
+c = get_property_features("")
+d = get_property_features("")
+e = get_property_features("")
+f = get_property_features("")
+g = get_property_features("")
+h = get_property_features("")
+i = get_property_features("")
+j = get_property_features("")
+k = get_property_features("")
+l = get_property_features("")
+m = get_property_features("")
+n = get_property_features("")
+o = get_property_features("")
+p = get_property_features("")
+q = get_property_features("")
+r = get_property_features("")
+s = get_property_features("")
+t = get_property_features("")
 
 
 # List of dictionaries (property listings)
@@ -142,7 +115,7 @@ else:
     os.makedirs(raw_folder, exist_ok=True)
 
     # Save data to CSV
-    csv_filename = os.path.join(raw_folder, "polokwane_p1_purchases.csv")
+    csv_filename = os.path.join(raw_folder, "kimberley_p2_purchases.csv")
 
     # Extract field names from the first dictionary (assuming all have the same structure)
     fieldnames = listings[0].keys()
