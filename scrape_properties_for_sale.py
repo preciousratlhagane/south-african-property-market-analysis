@@ -1,7 +1,6 @@
 import csv
 import os
 import random
-import sys
 import time
 
 import requests
@@ -9,12 +8,6 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
 from src.config import USER_AGENTS
-
-# Add the project root directory to sys.path
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-if project_root not in sys.path:
-    sys.path.append(project_root)
-
 
 # Load enviromental_variables:
 load_dotenv()
