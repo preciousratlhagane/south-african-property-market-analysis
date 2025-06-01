@@ -60,11 +60,16 @@ The dataset consists of web-scraped property listings, capturing details such as
         - 
         - 
 
+
 ## 📊 Key Features of the Dashboard
+- Visual insights into market trends and outliners
+- Geographic visualizations of affordability
+- Compare prices by city and suburb
+- Interactive filters for custom exploration
+
 
 ## 🖥️ Technologies Used: 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-8A2BE2?style=for-the-badge) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Power BI](https://img.shields.io/badge/Power%20BI-FAAB00?style=for-the-badge&logo=power%20bi&logoColor=white) 
-
 
 
 ## 📂 Project Organization
@@ -107,3 +112,6 @@ The dataset consists of web-scraped property listings, capturing details such as
 ```
 
 --------
+
+## 📜 Licence
+This project is for educational and demonstration purposes only. You can use, modify, and build upon it.
