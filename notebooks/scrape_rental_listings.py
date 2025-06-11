@@ -23,15 +23,34 @@ base_listing_url_for_rent = os.getenv("BASE_LISTING_URL_FOR_RENT")
 
 
 def human_like_delay():
-    base_delay = random.uniform(3, 10)  # Base delay between 3-10 seconds
-    jitter = random.uniform(-1, 2)  # Small random variation
+    """
+    Introduces a randomized delay to simulate human-like behaviour.
+
+    The function pauses the program execution or a duration composed of:
+    - A base delay randomly selected between 3 and 10 seconds
+    - An additional jitter randomly selected between -1 and 2 seconds
+    """
+    base_delay = random.uniform(3, 10)
+    jitter = random.uniform(-1, 2)
     time.sleep(base_delay + jitter)
 
 
 # Create a function to determine the maximum pages of listings in each capital city
 def get_max_num_of_pages(city_url):
+    """
+    Determinees the maximum number of pages avaliable for a given city's listing URL
+
+    This function sends an HTTP GET request to the specified `city_url`, simulating human-like behaviour with a randomized delay and rotating user-agent headers.
+    It then parses the pagination section of the HTML response to extract the maximum number of avaliable pages for listings in that city.
+
+    Args:
+        city_url (str): The URL of the city-specific listings page.
+
+    Returns:
+        int: The maximum number of pagination pages. Returns 1 if the page fails to load, if pagination is not found, or if the page number cannot be parsed. 
+    """
     headers = {"User-Agent": random.choice(USER_AGENTS)}
-    human_like_delay()  # Pause between requests(changed)
+    human_like_delay()
     city_response = requests.get(city_url, headers=headers)
 
     if city_response.status_code != 200:
@@ -47,7 +66,6 @@ def get_max_num_of_pages(city_url):
         print("No pagination found, assuming 1 page")
         return 1
 
-    # Find the last page number of the city listing
     max_page_number = pagination.find_all("li")
 
     if max_page_number:
@@ -86,6 +104,18 @@ for city, slug in capital_cities.items():
 
 # Create a function to extract the property_urls
 def get_property_listing_urls(property_url):
+    """
+    Extracts individual property listing URLs from a given property listings page.
+
+    This function sends a GET request to the provided `property_url`, simulating human-like browsing behaviour with randomized delays and user-agent headers. 
+    It parses the HTML content to find all anchor tags within listing tiles and extract valid `href` attributes pointing to individual listings
+
+    Args:
+        property_url (str): The URL of the main property listings page
+
+    Returns:
+        set: A set of strings, each representing a relative URL to an individual property listing. Returns an empty set if the request fails or no listings are found. 
+    """
     headers = {"User-Agent": random.choice(USER_AGENTS)}
     page_listings = set()
     human_like_delay()
@@ -114,9 +144,10 @@ def get_property_listing_urls(property_url):
 listing_urls = []
 
 
+# Iterate and store the property_listing urls
 for city, pages in city_max_pages.items():
-    # Get the correct slug for the city from capital_cities
-    # Ensures city and slug are correctly matched
+
+    # Get the correctly matched slug for each city
     slug = capital_cities.get(city)
 
     if not slug:
@@ -129,14 +160,33 @@ for city, pages in city_max_pages.items():
         property_url = f"{base_listing_url_for_rent}/{slug}?Page={page}"
         page_listing_urls = get_property_listing_urls(property_url)
 
-        # More efficient than using a loop
+        # Store the information in a list
         listing_urls.extend(page_listing_urls)
 
 
 # Create a function to extract property features
 def get_property_features(listing_url):
+    """
+    Extracts property details from an individual property listing URL
+
+    This function simulates human-like browsing by adding a randomized delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features. 
+
+    Args:
+        listing_url (str): The URL of the property listing page.
+
+    Returns:
+        dict: A dictionary containing extracted property listing details:
+            - 'url': The original listing URL.
+            - 'price': The price of the property (string or "N/A").
+            - 'location': The property's location (string or "N/A").
+            - 'property_title': The title/header of the listing (string or "N/A").
+            - 'property descripttion: The main description of the listing (string or "N/A").
+            - 'property_features': Additional features listed on the page (string or "N/A").
+
+        Returns None if the request fails or the page returns a non-200 status code.
+    """
     headers = {"User-Agent": random.choice(USER_AGENTS)}
-    human_like_delay()  # Ensure this function is defined
+    human_like_delay()
 
     try:
         listing_response = requests.get(
@@ -190,6 +240,7 @@ def get_property_features(listing_url):
 # Create an empty list to store scraped property data
 property_data_list = []
 
+# Iterate through the property_urls and store the information in a list
 for urls in listing_urls:
     property_listing_url = f"{base_listing_url_for_rent}/{urls}"
     property_info = get_property_features(property_listing_url)
@@ -201,7 +252,7 @@ for urls in listing_urls:
 # Get the absolute path to the root of the project (one level up from "notebooks")
 project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
 
-# Path to "data/raw"
+# Path to raw subfolder in the data folder
 raw_folder = os.path.join(project_root, "data", "raw")
 
 # Ensure that the directory exists
