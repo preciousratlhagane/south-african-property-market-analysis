@@ -16,12 +16,12 @@
 
 
 ## 📌 Overview <a class="anchor" id="overview"></a>
-Real estate investors aim to buy properties below market value and sell or rent them at competitive prices. The process of identifying such undervalued properties requires analyzing a large volume of listing data, considering factors like location, size, amenities, market trends and price anomalies. 
+Real estate investors aim to buy properties below market value and sell or rent them at competitive prices. Identifying such undervalued properties requires analysing a large volume of listing data, considering factors like location, size, amenities, market trends and price anomalies. 
 
 
 ## 📊 Data Sources <a class="anchor" id="data-sources"></a>
 The dataset consists of web-scraped property listings, capturing details such as: 
-- **Property Type** (Apartment, House, Townhouse, Farm etc.)
+- **Property Type** (Apartment, House, Townhouse, Farm, etc.)
 - **Location** (Suburb, Province, Capital City)
 - **Price** (For Sale & Rent)
 - **Size** (Square meters, Number of bedrooms and bathrooms)
@@ -31,7 +31,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 ## 🎯 Objectives <a class="anchor" id="objectives"></a>
 - **Compare** rental and sale prices across capital cities
 - **Identify** demand and supply trends in different cities
-- **Analyze** affordability and investment potential
+- **Analyse** affordability and investment potential
 - **Evaluate** the impact of economic factors on property prices
 
 
@@ -56,14 +56,14 @@ The dataset consists of web-scraped property listings, capturing details such as
     - Data Collected: Property type, price, suburb, city, size, features
 
 2. **Data Cleaning and Preprocessing**
-    - Removing duplicatess, handling missing values
+    - Removing duplicates, handling missing values
     - Extracting structured information from free-text fields
-    - Standardizing price and area formats
+    - Standardising price and area formats
 
 3. **Exploratory Data Analysis**
     - Removing duplicates and handling missing values
     - Extracting structured information from free-text fields
-    - Standardizing price, size, and categorical fields
+    - Standardising price, size, and categorical fields
 
 4. **Data Export**
     - Clean dataset saved as `.csv` for easy import into Power BI
@@ -76,8 +76,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 
 ## 📊 Key Features of the Report <a class="anchor" id="key-features-of-the-report"></a>
-- Visual insights into market trends and outliners
-- Geographic visualizations of affordability
+- Visual insights into market trends and outliers
+- Geographic visualisations of affordability
 - Compare prices by city and suburb
 - Interactive filters for custom exploration
 
@@ -93,7 +93,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 ├── README.md          <- The top-level README for developers using this project
 ├── data
 │   ├── interim        <- Intermediate data that has been transformed
-│   ├── processed      <- The final, canonical data sets for modeling
+│   ├── processed      <- The final, canonical data sets for modelling
 │   └── raw            <- The original, immutable data dump
 │
 │
@@ -107,7 +107,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
+│                         Generated with `pip freeze > requirements.txt`
 │
 ├── src                         <- Source code for this project
 │    │
@@ -139,7 +139,7 @@ dashboard/propertydashboard.pbix
 
 2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
-3.**Interact** with the visualizations:
+3. **Interact** with the visualisations:
     - Use slicers to filter by city, price range, property type, etc.
     - Hover over visuals to view tooltips and detailed stats
     - Explore maps and charts for geographic and trend-based insights
