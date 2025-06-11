@@ -124,7 +124,7 @@ def get_property_listing_urls(property_url):
     if listing_response.status_code != 200:
         print(
             f"Error accessing {property_url}, status: {listing_response.status_code}")
-        return []
+        return set()
 
     property_soup = BeautifulSoup(listing_response.text, "html.parser")
     listing_numbers = property_soup.find_all("div", class_="p24_regularTile")
