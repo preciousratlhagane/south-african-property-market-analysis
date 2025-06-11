@@ -91,17 +91,15 @@ The dataset consists of web-scraped property listings, capturing details such as
 ```
 ├── LICENSE            <- Open-source license if one is chosen
 ├── README.md          <- The top-level README for developers using this project
-├── dashboard
-│   ├── propertydashboard.pbix   <- PowerBI dashboard file
 ├── data
 │   ├── interim        <- Intermediate data that has been transformed
 │   ├── processed      <- The final, canonical data sets for modeling
 │   └── raw            <- The original, immutable data dump
 │
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`
+├── notebooks          <- Jupyter notebooks for data cleaning and exploration
+│                         
+│                         
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials
 │
@@ -111,18 +109,19 @@ The dataset consists of web-scraped property listings, capturing details such as
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 │
-└── src                         <- Source code for this project
-    │
-    ├── __init__.py             <- Makes src a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── plots.py                <- Code to create visualizations 
-    │
-    └── services                <- Service classes to connect with external platforms, tools, or APIs
-        └── __init__.py 
+├── src                         <- Source code for this project
+│    │
+│    ├── __init__.py             <- Makes src a Python module
+│    │
+│    ├── config.py               <- Store useful variables and configuration
+│    │
+│    └── services                <- Service classes to connect with external platforms, tools, or APIs
+│        └── __init__.py 
+│
+│
+└── web_scraping
+     ├── scrape_properties_for_sale.py
+     └── scrape_rental_listings.py 
 ```
 
 --------
