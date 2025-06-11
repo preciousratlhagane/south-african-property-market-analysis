@@ -21,6 +21,15 @@ base_listing_url_for_rent = os.getenv("BASE_LISTING_URL_FOR_SALE")
 
 
 # Create a function to mimic human_like behaviour when scrolling on a website
+"""
+    Introduces a randomized delay to simulate human-like behaviour.
+
+    The function pauses the program execution or a duration composed of:
+    - A base delay randomly selected between 3 and 10 seconds
+    - An additional jitter randomly selected between -1 and 2 seconds
+"""
+
+
 def human_like_delay():
     base_delay = random.uniform(3, 10)
     jitter = random.uniform(-1, 2)
@@ -28,6 +37,27 @@ def human_like_delay():
 
 
 # Create a function to extract property features
+    """
+    Extracts property details from an individual property listing URL
+
+    This function simulates human-like browsing by adding a randomized delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features. 
+
+    Args:
+        listing_url (str): The URL of the property listing page.
+
+    Returns:
+        dict: A dictionary containing extracted property listing details:
+            - 'url': The original listing URL.
+            - 'price': The price of the property (string or "N/A").
+            - 'location': The property's location (string or "N/A").
+            - 'property_title': The title/header of the listing (string or "N/A").
+            - 'property descripttion: The main description of the listing (string or "N/A").
+            - 'property_features': Additional features listed on the page (string or "N/A").
+
+        Returns None if the request fails or the page returns a non-200 status code.
+    """
+
+
 def get_property_features(listing_url):
     headers = {"User-Agent": random.choice(USER_AGENTS)}
     human_like_delay()  # Ensure this function is defined
