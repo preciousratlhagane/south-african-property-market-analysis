@@ -12,7 +12,7 @@
 * [Project Structure](#project-structure)
 * [Getting Started](#getting-started)
 * [Results and Insights](#results-and-insights)
-* [License](#license)
+* [Licence](#licence)
 
 
 ## 📌 Overview <a class="anchor" id="overview"></a>
@@ -52,8 +52,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 ## 🪈 Project Pipeline <a class="anchor" id="project-pipeline"></a>
 
 1. **Web Scraping** 
-    - Tools: 
-    - Data Collected: 
+    - Tools: BeautifulSoup
+    - Data Collected: Property type, price, suburb, city, size, features
 
 2. **Data Cleaning and Preprocessing**
     - Removing duplicatess, handling missing values
@@ -61,9 +61,9 @@ The dataset consists of web-scraped property listings, capturing details such as
     - Standardizing price and area formats
 
 3. **Exploratory Data Analysis**
-    -
-    -
-    -
+    - Removing duplicates and handling missing values
+    - Extracting structured information from free-text fields
+    - Standardizing price, size, and categorical fields
 
 4. **Data Export**
     - Clean dataset saved as `.csv` for easy import into Power BI
@@ -71,8 +71,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 5. **PowerBI Report**
     - Interactive visuals including:
         - Price trends by city and suburb
-        - 
-        - 
+        - Heatmaps for affordability and demand
+        - Custom filters: location, property type, price range
 
 
 ## 📊 Key Features of the Report <a class="anchor" id="key-features-of-the-report"></a>
@@ -128,11 +128,27 @@ The dataset consists of web-scraped property listings, capturing details such as
 --------
 
 
-## Getting Started <a class="anchor" id="getting-started"></a>
+## 🗄️ Getting Started <a class="anchor" id="getting-started"></a>
+
+To explore the insights:
+
+1. **Download** the Power BI dashboard file located in the `dashboard/` folder:
+
+```plaintext
+dashboard/propertydashboard.pbix
+```
+
+2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
+
+3.**Interact** with the visualizations:
+    - Use slicers to filter by city, price range, property type, etc.
+    - Hover over visuals to view tooltips and detailed stats
+    - Explore maps and charts for geographic and trend-based insights
+
+## 📈 Results and Insights <a class="anchor" id="results-and-insights"></a>
 
 
-## Results and Insights <a class="anchor" id="results-and-insights"></a>
+## 📜 Licence <a class="anchor" id="licence"></a>
+This project is licensed under the MIT License – see the [LICENCE](./LICENCE) file for details.
 
-
-## 📜 License <a class="anchor" id="license"></a>
-This project is for educational and demonstration purposes only. You can use, modify, and build upon it.
+> For educational and demonstration purposes. Data and visuals are not intended for commercial use.
