@@ -134,7 +134,7 @@ To explore the insights:
 1. **Download** the Power BI dashboard file located in the `dashboard/` folder:
 
 ```plaintext
-dashboard/propertydashboard.pbix
+reports/propertydashboard.pbix
 ```
 
 2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
