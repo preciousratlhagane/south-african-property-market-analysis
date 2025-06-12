@@ -17,7 +17,7 @@ from src.config import USER_AGENTS  # noqa: E402
 
 # Load enviromental_variables:
 load_dotenv()
-base_listing_url_for_rent = os.getenv("BASE_LISTING_URL_FOR_SALE")
+base_listing_url_for_sale = os.getenv("BASE_LISTING_URL_FOR_SALE")
 
 
 def human_like_delay():
@@ -78,8 +78,60 @@ city_max_pages = {}
 
 # Create a dictionary to store all the capital cities and their links:
 capital_cities = {
-
+    "Johannesburg": "property-for-sale-in-johannesburg-c100",
+    "Bloemfontein": "property-for-sale-in-bloemfontein-c18",
+    "Bhisho": "property-for-sale-in-bhisho-c247",
+    "Pietermaritzburg": "property-for-sale-in-pietermaritzburg-c147",
+    "Polokwane": "property-for-sale-in-polokwane-c703",
+    "Mbombela": "property-for-sale-in-mbombela-as170",
+    "Cape Town": "property-for-sale-in-cape-town-c432",
+    "Mafikeng": "property-for-sale-in-mafikeng-c133",
+    "Kimberley": "property-for-sale-in-kimberley-c715"
 }
+
+# Loop through the capital cities and store the maximum number of pages of listings in a dictionary
+for city, slug in capital_cities.items():
+    capital_city_url = f"{base_listing_url_for_sale}/{slug}"
+    max_pages_per_city = get_max_num_of_pages(capital_city_url)
+    city_max_pages[city] = max_pages_per_city
+    print(f"{city}: {max_pages_per_city} found")
+
+
+def property_listing_urls(property_url):
+    """
+    Extracts individual property listing URLs from a given property listings page.
+
+    This function sends a GET request to the provided `property_url`, simulating human-like browsing behaviour with randomized delays and user-agent headers. 
+    It parses the HTML content to find all anchor tags within listing tiles and extract valid `href` attributes pointing to individual listings
+
+    Args:
+        property_url (str): The URL of the main property listings page
+
+    Returns:
+        set: A set of strings, each representing a relative URL to an individual property listing. Returns an empty set if the request fails or no listings are found. 
+    """
+    headers = {"User-Agent": random.choice(USER_AGENTS)}
+    page_listings = set()
+    human_like_delay()
+    listing_response = requests.get(property_url, headers=headers, timeout=15)
+
+    if listing_response.status_code != 200:
+        print(
+            f"Error accessing {property_url}, status: {listing_response.status_code}")
+        return set()
+
+    property_soup = BeautifulSoup(listing_response.text, "html_parser")
+    listing_numbers = property_soup.find_all("div", class_="p24_regularTile")
+
+    for ln in listing_numbers:
+        links = ln.find_all("a")
+        for link in links:
+            href = link.get("href")
+            if href:
+                page_listings.add(href)
+                print(f"Found listing: {href}")
+
+    return page_listings
 
 
 def get_property_features(listing_url):
