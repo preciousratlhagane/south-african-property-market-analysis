@@ -20,27 +20,73 @@ load_dotenv()
 base_listing_url_for_rent = os.getenv("BASE_LISTING_URL_FOR_SALE")
 
 
-# Create a function to mimic human_like behaviour when scrolling on a website
-"""
+def human_like_delay():
+    """
     Introduces a randomized delay to simulate human-like behaviour.
 
     The function pauses the program execution or a duration composed of:
     - A base delay randomly selected between 3 and 10 seconds
     - An additional jitter randomly selected between -1 and 2 seconds
-"""
-
-
-def human_like_delay():
+    """
     base_delay = random.uniform(3, 10)
     jitter = random.uniform(-1, 2)
     time.sleep(base_delay + jitter)
 
 
-# Create a function to extract property features
+def get_max_num_of_pages(city_url):
+    """
+    Determinees the maximum number of pages avaliable for a given city's listing URL
+
+    This function sends an HTTP GET request to the specified `city_url`, simulating human-like behaviour with a randomized delay and rotating user-agent headers.
+    It then parses the pagination section of the HTML response to extract the maximum number of avaliable pages for listings in that city.
+
+    Args:
+        city_url (str): The URL of the city-specific listings page.
+
+    Returns:
+        int: The maximum number of pagination pages. Returns 1 if the page fails to load, if pagination is not found, or if the page number cannot be parsed. 
+    """
+    headers = {"User-Agent": random.choice(USER_AGENTS)}
+    human_like_delay()
+    city_response = requests.get(city_url, headers=headers)
+
+    if city_response.status_code != 200:
+        print(
+            f"Error accessing {city_url}, status: {city_response.status_code}")
+        return 1
+
+    soup = BeautifulSoup(city_response.text, "html_parser")
+
+    pagination = soup.find("ul", class_="pagination")
+
+    if not pagination:
+        print("No pagination found, assuming 1 page")
+
+    max_page_number = pagination.find_all("li")
+
+    if max_page_number:
+        try:
+            max_page = int(max_page_number[-1].get_text(strip=True))
+            return max_page
+        except ValueError:
+            print("Could not determine max pages, defaulting to 1")
+            return 1
+
+
+# Initialize an empty dictionary to store the maximum number of pages of listings in each capital city
+city_max_pages = {}
+
+# Create a dictionary to store all the capital cities and their links:
+capital_cities = {
+
+}
+
+
+def get_property_features(listing_url):
     """
     Extracts property details from an individual property listing URL
 
-    This function simulates human-like browsing by adding a randomized delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features. 
+    This function simulates human-like browsing by adding a randomized delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features.
 
     Args:
         listing_url (str): The URL of the property listing page.
@@ -56,9 +102,6 @@ def human_like_delay():
 
         Returns None if the request fails or the page returns a non-200 status code.
     """
-
-
-def get_property_features(listing_url):
     headers = {"User-Agent": random.choice(USER_AGENTS)}
     human_like_delay()  # Ensure this function is defined
 
