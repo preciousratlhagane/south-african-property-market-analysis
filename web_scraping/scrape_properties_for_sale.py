@@ -97,7 +97,7 @@ for city, slug in capital_cities.items():
     print(f"{city}: {max_pages_per_city} found")
 
 
-def property_listing_urls(property_url):
+def get_property_listing_urls(property_url):
     """
     Extracts individual property listing URLs from a given property listings page.
 
@@ -132,6 +132,29 @@ def property_listing_urls(property_url):
                 print(f"Found listing: {href}")
 
     return page_listings
+
+
+# Intialise an empty list to store the listing urls
+listing_urls = []
+
+# Iterate and store the property_listing urls
+for city, pages in city_max_pages.items():
+
+    # Get the correctly matched slug for each city
+    slug = capital_cities.get(city)
+
+    if not slug:
+        print(f"Warning: No slug found for {city}, skipping...")
+        continue
+
+    for page in range(1, pages + 1):
+        print(f"Scraping page {page}/{pages} for {city}...")
+
+        property_url = f"{base_listing_url_for_sale}/{slug}?Page={page}"
+        page_listing_urls = get_property_listing_urls(property_url)
+
+        # Store the information in a list
+        listing_urls.extend(page_listing_urls)
 
 
 def get_property_features(listing_url):
@@ -206,59 +229,38 @@ def get_property_features(listing_url):
         return None
 
 
-a = get_property_features("")
-b = get_property_features("")
-c = get_property_features("")
-d = get_property_features("")
-e = get_property_features("")
-f = get_property_features("")
-g = get_property_features("")
-h = get_property_features("")
-i = get_property_features("")
-j = get_property_features("")
-k = get_property_features("")
-l = get_property_features("")
-m = get_property_features("")
-n = get_property_features("")
-o = get_property_features("")
-p = get_property_features("")
-q = get_property_features("")
-r = get_property_features("")
-s = get_property_features("")
-t = get_property_features("")
+# Create an empty list to store scrapped property data
+property_data_list = []
 
+# Iterate through the property_urls and store the information in a list
+for urls in listing_urls:
+    property_listing_url = f"{base_listing_url_for_sale}/{urls}"
+    property_info = get_property_features(property_listing_url)
 
-# List of dictionaries (property listings)
-listings = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t]
+    if property_info:
+        property_data_list.append(property_info)
 
-# Ensure the list is not empty
-if not listings:
-    print("Error: No listings found.")
-else:
-    # Get the absolute path to the root of the project (one level up from "notebooks")
-    project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
+# Get the absolute path to the root of the project
+project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
 
-    # Path to "data/interim"
-    raw_folder = os.path.join(project_root, "data", "interim")
+raw_folder = os.path.join(project_root, "data", "raw")
 
-    # Ensure that the directory exists
-    os.makedirs(raw_folder, exist_ok=True)
+# Ensure that the directory exists
+os.makedirs(raw_folder, exist_ok=True)
 
-    # Save data to CSV
-    csv_filename = os.path.join(raw_folder, "kimberley_p2_purchases.csv")
+# Save data to CSV file
+csv_filename = os.path.join(
+    raw_folder, "listings_for_sale_in_capital_cities.csv")
 
-    # Extract field names from the first dictionary (assuming all have the same structure)
-    fieldnames = listings[0].keys()
+# Define CSV column headers
+csv_columns = ["url", "price", "location", "property_title",
+               "property_description", "property_features"]
 
-    # Write to CSV file
-    with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
+# Write to CSV file
+with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=csv_columns)
 
-        # Write header row
-        writer.writeheader()
+    writer.writeheader()
+    writer.writerows(property_data_list)
 
-        # Write each dictionary as a row in the CSV
-        writer.writerows(listings)
-
-    print(
-        f"CSV file '{csv_filename}' has been created successfully at {csv_filename}!")
+print(f"Data successfully saved to {csv_filename}")
