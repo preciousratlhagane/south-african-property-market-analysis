@@ -24,10 +24,10 @@ base_listing_url_for_rent = os.getenv("BASE_LISTING_URL_FOR_RENT")
 
 def human_like_delay():
     """
-    Introduces a randomized delay to simulate human-like behaviour.
+    Introduces a randomised delay to simulate human-like behaviour.
 
-    The function pauses the program execution or a duration composed of:
-    - A base delay randomly selected between 3 and 10 seconds
+    The function pauses the program execution for a duration composed of:
+    - A base delay is randomly selected between 3 and 10 seconds
     - An additional jitter randomly selected between -1 and 2 seconds
     """
     base_delay = random.uniform(3, 10)
@@ -38,10 +38,10 @@ def human_like_delay():
 # Create a function to determine the maximum pages of listings in each capital city
 def get_max_num_of_pages(city_url):
     """
-    Determinees the maximum number of pages avaliable for a given city's listing URL
+    Determines the maximum number of pages available for a given city's listing URL
 
-    This function sends an HTTP GET request to the specified `city_url`, simulating human-like behaviour with a randomized delay and rotating user-agent headers.
-    It then parses the pagination section of the HTML response to extract the maximum number of avaliable pages for listings in that city.
+    This function sends an HTTP GET request to the specified `city_url`, simulating human-like behaviour with a randomised delay and rotating user-agent headers.
+    It then parses the pagination section of the HTML response to extract the maximum number of available pages for listings in that city.
 
     Args:
         city_url (str): The URL of the city-specific listings page.
@@ -77,7 +77,7 @@ def get_max_num_of_pages(city_url):
             return 1
 
 
-# Intialize an empty dictionary to store the maximum number of pages of listings in each capital city
+# Initialise an empty dictionary to store the maximum number of pages of listings in each capital city
 city_max_pages = {}
 
 # Create a dictionary to store all the capital cities and their links:
@@ -107,8 +107,8 @@ def get_property_listing_urls(property_url):
     """
     Extracts individual property listing URLs from a given property listings page.
 
-    This function sends a GET request to the provided `property_url`, simulating human-like browsing behaviour with randomized delays and user-agent headers. 
-    It parses the HTML content to find all anchor tags within listing tiles and extract valid `href` attributes pointing to individual listings
+    This function sends a GET request to the provided `property_url`, simulating human-like browsing behaviour with randomised delays and user-agent headers. 
+    It parses the HTML content to find all anchor tags within listing tiles and extracts valid `href` attributes pointing to individual listings
 
     Args:
         property_url (str): The URL of the main property listings page
@@ -140,7 +140,7 @@ def get_property_listing_urls(property_url):
     return page_listings
 
 
-# Initialise an empty dictionary to store the listing_urls
+# Initialise an empty dictionary to store the listing URLs
 listing_urls = []
 
 
@@ -169,7 +169,7 @@ def get_property_features(listing_url):
     """
     Extracts property details from an individual property listing URL
 
-    This function simulates human-like browsing by adding a randomized delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features. 
+    This function simulates human-like browsing by adding a randomised delay and rotating user-agent headers. It sends a GET request to the specified listing URL and parses the HTML response to extract key property information such as price, location, title, description, and features. 
 
     Args:
         listing_url (str): The URL of the property listing page.
@@ -177,11 +177,11 @@ def get_property_features(listing_url):
     Returns:
         dict: A dictionary containing extracted property listing details:
             - 'url': The original listing URL.
-            - 'price': The price of the property (string or "N/A").
+            - 'price': The property price (string or "N/A").
             - 'location': The property's location (string or "N/A").
             - 'property_title': The title/header of the listing (string or "N/A").
-            - 'property descripttion: The main description of the listing (string or "N/A").
-            - 'property_features': Additional features listed on the page (string or "N/A").
+            - 'property description: The main description of the listing (string or "N/A").
+            - 'property_features': Additional features on the page (string or "N/A").
 
         Returns None if the request fails or the page returns a non-200 status code.
     """
