@@ -44,8 +44,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 | Eastern Cape | Bhisho |
 | Free State | Bloemfontein |
 | Limpopo | Polokwane |
-| Mpumalanga | Mbombela |
-| North West | Mahikeng |
+| Mpumalanga | Nelspruit |
+| North West | Mafikeng |
 | Northern Cape | Kimberley |
 
 
