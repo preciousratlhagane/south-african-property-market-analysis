@@ -101,7 +101,6 @@ The dataset consists of web-scraped property listings, capturing details such as
 │                         
 │                         
 │
-├── references         <- Data dictionaries, manuals, and all other explanatory materials
 │
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
