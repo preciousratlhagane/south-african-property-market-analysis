@@ -143,7 +143,9 @@ reports/propertydashboard.pbix
 
 2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
-3. **Interact** with the visualisations:
+3. **View** a static PDF version of the dashboard by clicking [this PDF file](reports/propertydashboard.pdf).
+
+4. **Interact** with the visualisations:
     - Use slicers to filter by city, price range, property type, etc.
     - Hover over visuals to view tooltips and detailed stats
     - Explore maps and charts for geographic and trend-based insights
