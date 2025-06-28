@@ -21,6 +21,7 @@ Real estate investors aim to buy properties below market value and sell or rent 
 
 ## 📊 Data Sources <a class="anchor" id="data-sources"></a>
 The dataset consists of web-scraped property listings, capturing details such as: 
+
 - **Property Type** (Apartment, House, Townhouse, Farm, etc.)
 - **Location** (Suburb, Province, Capital City)
 - **Price** (For Sale & Rent)
@@ -76,6 +77,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 
 ## 📊 Key Features of the Report <a class="anchor" id="key-features-of-the-report"></a>
+
 - Visual insights into market trends and outliers
 - Geographic visualisations of affordability
 - Compare prices by city and suburb
@@ -83,7 +85,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 
 ## 🖥️ Technologies Used: <a class="anchor" id="technologies-used"></a>
-![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-8A2BE2?style=for-the-badge) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Power BI](https://img.shields.io/badge/Power%20BI-FAAB00?style=for-the-badge&logo=power%20bi&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-8A2BE2?style=for-the-badge) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Power BI](https://img.shields.io/badge/Power%20BI-FAAB00?style=for-the-badge&logo=power%20bi&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
+
 
 
 ## 📂 Project Structure <a class="anchor" id="project-structure"></a>
@@ -128,6 +131,8 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 ## 🗄️ Getting Started <a class="anchor" id="getting-started"></a>
 
+Explore this interactive South African property market dashboard to analyze listings, rentals vs. sales, trends by suburb and property type, and key real estate insights. x
+
 To explore the insights:
 
 1. **Download** the Power BI dashboard file located in the `dashboard/` folder:
@@ -142,6 +147,9 @@ reports/propertydashboard.pbix
     - Use slicers to filter by city, price range, property type, etc.
     - Hover over visuals to view tooltips and detailed stats
     - Explore maps and charts for geographic and trend-based insights
+
+
+You can also view a similar interactive version on [Tableau Public](https://public.tableau.com/views/SouthAfricanPropertyDashboardAnalysis/SaleListings?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) by clicking the link.
 
 ## 📈 Results and Insights <a class="anchor" id="results-and-insights"></a>
 
