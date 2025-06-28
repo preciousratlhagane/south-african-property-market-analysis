@@ -135,15 +135,15 @@ Explore this interactive South African property market dashboard to analyze list
 
 To explore the insights:
 
-1. **Download** the Power BI dashboard file located in the `dashboard/` folder:
+1. **Download** the Power BI dashboard file located in the `reports/` folder:
 
 ```plaintext
-reports/propertydashboard.pbix
+reports/property_report.pbix
 ```
 
 2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
-3. **View** a static PDF version of the dashboard by clicking [this PDF file](reports/propertydashboard.pdf).
+3. **View** a static PDF version of the dashboard by clicking [this PDF file](reports/property_report_pdf.pdf).
 
 4. **Interact** with the visualisations:
     - Use slicers to filter by city, price range, property type, etc.
