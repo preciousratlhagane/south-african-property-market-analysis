@@ -16,7 +16,7 @@
 
 
 ## 📌 Overview <a class="anchor" id="overview"></a>
-Real estate investors aim to buy properties below market value and sell or rent them at competitive prices. Identifying such undervalued properties requires analysing a large volume of listing data, considering factors like location, size, amenities, market trends and price anomalies. 
+Real estate investors aim to buy properties below market value and sell or rent them at competitive prices. Identifying such undervalued properties requires analysing a large volume of listing data, considering factors such as location, size, amenities, market trends, and price anomalies. 
 
 
 ## 📊 Data Sources <a class="anchor" id="data-sources"></a>
@@ -100,7 +100,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 │
 ├── reports                        <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   ├── property_report.pbix       <- PowerBI report file
-│   └── property_report_pdf.pdf    <- PowerBI report file in pdf format 
+│   └── property_report_pdf.pdf    <- PowerBI report file in PDF format 
 │
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
@@ -125,7 +125,7 @@ The dataset consists of web-scraped property listings, capturing details such as
 
 ## 🗄️ Getting Started <a class="anchor" id="getting-started"></a>
 
-Explore this interactive South African property market dashboard to analyze listings, rentals vs. sales, trends by suburb and property type, and key real estate insights. x
+Explore this interactive South African property market dashboard to analyse listings, rentals vs. sales, trends by suburb and property type, and key real estate insights. x
 
 To explore the insights:
 
@@ -151,20 +151,20 @@ You can also view a similar interactive version on [Tableau Public](https://publ
 ## 📈 Results and Insights <a class="anchor" id="results-and-insights"></a>
 
 ### For Sale Properties
-- Suburbs like Heriotdale and Clifton average over R60M+ for residental properties. 
+- Suburbs like Heriotdale and Clifton average over R60M+ for residential properties. 
 - Houses dominate listings, followed by apartments/flats. 
-- Average selling price correlates with number of bedrooms. 
+- The average selling price correlates with the number of bedrooms. 
 
 ### Rental Properties
-- Median rental price is 18K, based on listings priced per day, per square meter or per month. 
-- Most rentals include basic amentities; 88% are pet-friendly.
-- Industrial properties command the highest rental rental returns on average.
+- Median rental price is 18K, based on listings priced per day, per square meter or month. 
+- Most rentals include basic amenities; 88% are pet-friendly.
+- Industrial properties command the highest rental returns on average.
 
 ### Use Cases
 - Real estate agencies targeting high-value markets. 
-- Developers analyzing property type trends. 
+- Developers are analysing property type trends. 
 - Tenants comparing rental affordability
-- Investors identifying high-yield oppotunites.
+- Investors identifying high-yield opportunities.
 
 
 ## 📜 Licence <a class="anchor" id="licence"></a>
