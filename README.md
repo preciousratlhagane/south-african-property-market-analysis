@@ -56,23 +56,18 @@ The dataset consists of web-scraped property listings, capturing details such as
     - Tools: BeautifulSoup
     - Data Collected: Property type, price, suburb, city, size, features
 
-2. **Data Cleaning and Preprocessing**
+2. **Data Cleaning and Exploratory Analysis**
     - Removing duplicates, handling missing values
     - Extracting structured information from free-text fields
     - Standardising price and area formats
 
-3. **Exploratory Data Analysis**
-    - Removing duplicates and handling missing values
-    - Extracting structured information from free-text fields
-    - Standardising price, size, and categorical fields
-
-4. **Data Export**
+3. **Data Export**
     - Clean dataset saved as `.csv` for easy import into Power BI
 
-5. **PowerBI Report**
+4. **PowerBI Report**
     - Interactive visuals including:
         - Price trends by city and suburb
-        - Heatmaps for affordability and demand
+        - Feature frequency in listings (e.g. kitchens, parking, pet-friendliness)
         - Custom filters: location, property type, price range
 
 
@@ -88,14 +83,12 @@ The dataset consists of web-scraped property listings, capturing details such as
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-8A2BE2?style=for-the-badge) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Power BI](https://img.shields.io/badge/Power%20BI-FAAB00?style=for-the-badge&logo=power%20bi&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
 
 
-
 ## 📂 Project Structure <a class="anchor" id="project-structure"></a>
 
 ```
 ├── LICENSE            <- Open-source license if one is chosen
 ├── README.md          <- The top-level README for developers using this project
 ├── data
-│   ├── interim        <- Intermediate data that has been transformed
 │   ├── processed      <- The final, canonical data sets for modelling
 │   └── raw            <- The original, immutable data dump
 │
@@ -105,8 +98,10 @@ The dataset consists of web-scraped property listings, capturing details such as
 │                         
 │
 │
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── reports                        <- Generated analysis as HTML, PDF, LaTeX, etc.
+│   ├── property_report.pbix       <- PowerBI report file
+│   └── property_report_pdf.pdf    <- PowerBI report file in pdf format 
+│
 │
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         Generated with `pip freeze > requirements.txt`
@@ -115,10 +110,9 @@ The dataset consists of web-scraped property listings, capturing details such as
 │    │
 │    ├── __init__.py             <- Makes src a Python module
 │    │
-│    ├── config.py               <- Store useful variables and configuration
 │    │
-│    └── services                <- Service classes to connect with external platforms, tools, or APIs
-│        └── __init__.py 
+│    └── config.py               <- Store useful variables and configuration
+│       
 │
 │
 └── web_scraping
@@ -143,7 +137,7 @@ reports/property_report.pbix
 
 2. **Open** the file using [Power BI Desktop](https://powerbi.microsoft.com/desktop/).
 
-3. **View** a static PDF version of the dashboard by clicking [this PDF file](reports/property_report_pdf.pdf).
+3. **View** a static PDF version of the report by clicking [this PDF file](reports/property_report_pdf.pdf).
 
 4. **Interact** with the visualisations:
     - Use slicers to filter by city, price range, property type, etc.
@@ -153,7 +147,24 @@ reports/property_report.pbix
 
 You can also view a similar interactive version on [Tableau Public](https://public.tableau.com/views/SouthAfricanPropertyDashboardAnalysis/SaleListings?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) by clicking the link.
 
+
 ## 📈 Results and Insights <a class="anchor" id="results-and-insights"></a>
+
+### For Sale Properties
+- Suburbs like Heriotdale and Clifton average over R60M+ for residental properties. 
+- Houses dominate listings, followed by apartments/flats. 
+- Average selling price correlates with number of bedrooms. 
+
+### Rental Properties
+- Median rental price is 18K, based on listings priced per day, per square meter or per month. 
+- Most rentals include basic amentities; 88% are pet-friendly.
+- Industrial properties command the highest rental rental returns on average.
+
+### Use Cases
+- Real estate agencies targeting high-value markets. 
+- Developers analyzing property type trends. 
+- Tenants comparing rental affordability
+- Investors identifying high-yield oppotunites.
 
 
 ## 📜 Licence <a class="anchor" id="licence"></a>
